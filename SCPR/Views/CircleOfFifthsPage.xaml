@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="SCPR.Views.CircleOfFifthsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml" 
+    xmlns:local="using:SCPR.Views"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+    
+    <Grid>
+        <canvas:CanvasControl x:Name="canvas1" Height="900"/>
+        
+        <StackPanel>
+            <Border Margin="0,20">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="scaledegree1" Content="{x:Bind ViewModel.Note1, Mode=OneWay}" FontFamily="Bahnschrift" FontWeight="Light" FontSize="20" Width="80" Margin="0,0,20,0"/>
+                        <TextBlock Text="I" FontFamily="Constantia" FontWeight="Light" FontSize="28" Width="30"/>
+                        <TextBlock Text="TONIC" FontFamily="Segoe UI" FontWeight="Normal" FontSize="18" Margin="40,8,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="scaledegree2" Content="{x:Bind ViewModel.Note2, Mode=OneWay}" FontFamily="Bahnschrift" FontWeight="Light" FontSize="20" Width="80" Margin="0,0,20,0"/>
+                        <TextBlock Text="ii" FontFamily="Constantia" FontWeight="Light" FontSize="28" Width="30"/>
+                        <TextBlock Text="SUPERTONIC" FontFamily="Segoe UI" FontWeight="Normal" FontSize="18" Margin="40,8,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>    
+            <ComboBox PlaceholderText="Select Key" Name="keyComboBox" Grid.Column="1" Grid.Row="0" Background="LightBlue" FontFamily="Segoe UI" Width="180" FontSize="20" SelectionChanged="keyComboBox_SelectionChanged" Margin="0,20,0,0">
+                <x:String>C   or   Am</x:String>
+                <x:String>G   or   Em</x:String>
+            </ComboBox>
+        </StackPanel>
+        
+    </Grid>
+</Page>
